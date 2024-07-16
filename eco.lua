@@ -1,4 +1,4 @@
--- c
+-- I miss E7LK 😔
 
 -- Services
 local M = game:GetService"MarketplaceService"
@@ -8,18 +8,18 @@ local TS = game:GetService"TweenService"
 local HT = game:GetService"HttpService"
 
 -- Physical Variables
-local x, y, z = 24, 9, 0
-local yOffset, zOffset = 4, 10
+local x, y, z = 12, 4.5, 0
+local yOffset, zOffset = 1, 5
 local physicalTransparency = 1;
 
 -- Ui Variables
-local textSize = 38.8
-local font = Enum.Font.Antique
+local textSize = 30
+local font = Enum.Font.Highway
 local textColor = Color3.fromRGB(255, 255, 255)
 local backgroundColor = Color3.fromRGB(0, 0, 0)
 local inputTransparency, outputTransparency = 0, 1
 local canvasSize = Vector2.new(1400, 600)
-local openingText = [[Console loaded.]]
+local openingText = [[Console loaded 💥]]
 
 -- Casual Variables
 local player = owner;
@@ -213,7 +213,7 @@ function input (str)
 			sound.SoundId = id
 			sound:Play()
 		end
-	elseif space[1]:lower() == "vol" then
+	elseif space[1]:lower() == "setvolume" then
 		output.Text ..= "\n>" .. str
 		sound.Volume = tonumber(space[2])
 		output.Text ..= "\nVolume set to " .. space[2]
