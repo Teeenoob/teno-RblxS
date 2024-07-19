@@ -142,6 +142,7 @@ sound.Volume = 1
 sound.Looped = true
 sound.RollOffMinDistance = 14
 sound.RollOffMaxDistance = 32
+sound.RollOffMode = Enum.RollOffMode.Linear
 
 local surfaceGui = Instance.new("SurfaceGui", screen)
 surfaceGui.CanvasSize = canvasSize
