@@ -139,7 +139,7 @@ end)
 local sound = Instance.new("Sound", screen)
 sound.Volume = 1
 sound.Looped = true
-sound.RollOffMinDistance = 60
+sound.RollOffMinDistance = 40
 sound.RollOffMaxDistance = 60
 
 local surfaceGui = Instance.new("SurfaceGui", screen)
