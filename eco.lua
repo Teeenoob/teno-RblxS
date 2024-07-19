@@ -229,11 +229,11 @@ function input (str)
 	elseif space[1]:lower() == "rolloffmin" then
 		output.Text ..= "\n>" .. str
 		sound.RollOffMinDistance = tonumber(space[2])
-		output.Text ..= "\Min roll off set to " .. space[2]
+		output.Text ..= "\nMin roll off set to " .. space[2]
 	elseif space[1]:lower() == "rolloffmax" then
 		output.Text ..= "\n>" .. str
 		sound.RollOffMaxDistance = tonumber(space[2])
-		output.Text ..= "\Max roll off set to " .. space[2]
+		output.Text ..= "\nMax roll off set to " .. space[2]
 	elseif space[1]:lower() == "stopmusic" then
 		output.Text ..= "\n>" .. str
 		sound:Pause()
