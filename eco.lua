@@ -225,6 +225,11 @@ function input (str)
 		output.Text ..= "\n>" .. str
 		sound.PlaybackSpeed = tonumber(space[2])
 		output.Text ..= "\nPitch set to " .. space[2]
+	elseif space[1]:lower() == "rolloff" then
+		output.Text ..= "\n>" .. str
+		sound.RollOffMinDistance = tonumber(space[2])
+		sound.RollOffMaxDistance = tonumber(space[2])
+		output.Text ..= "\Roll Off set to " .. space[2]
 	elseif space[1]:lower() == "stopmusic" then
 		output.Text ..= "\n>" .. str
 		sound:Pause()
