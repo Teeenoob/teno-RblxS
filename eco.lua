@@ -211,7 +211,7 @@ function input (str)
 			output.Text ..= "\nPlaying wutiwant / " .. color("rbxassetid://18562915383", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://18562915383"
 			sound:Play()
-		else
+		elseif
 			local id = base .. tonumber(space[2])
 			output.Text ..= "\nPlaying " .. color(id, Color3.fromRGB(100, 255, 50))
 			sound.SoundId = id
