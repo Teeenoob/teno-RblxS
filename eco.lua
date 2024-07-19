@@ -30,6 +30,7 @@ local rootpart = character.HumanoidRootPart;
 local base = "rbxassetid://"
 local rand = math.random
 local dApi = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+local cApi = ""
 
 -- Functions
 function getPlr (text)
@@ -225,11 +226,14 @@ function input (str)
 		output.Text ..= "\n>" .. str
 		sound.PlaybackSpeed = tonumber(space[2])
 		output.Text ..= "\nPitch set to " .. space[2]
-	elseif space[1]:lower() == "rolloff" then
+	elseif space[1]:lower() == "rolloffmin" then
 		output.Text ..= "\n>" .. str
 		sound.RollOffMinDistance = tonumber(space[2])
+		output.Text ..= "\Min roll off set to " .. space[2]
+	elseif space[1]:lower() == "rolloffmax" then
+		output.Text ..= "\n>" .. str
 		sound.RollOffMaxDistance = tonumber(space[2])
-		output.Text ..= "\Roll Off set to " .. space[2]
+		output.Text ..= "\Max roll off set to " .. space[2]
 	elseif space[1]:lower() == "stopmusic" then
 		output.Text ..= "\n>" .. str
 		sound:Pause()
