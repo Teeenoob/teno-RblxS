@@ -213,6 +213,14 @@ function input (str)
 			output.Text ..= "\nPlaying wutiwant / " .. color("rbxassetid://18562915383", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://18562915383"
 			sound:Play()
+		elseif space[2]:lower() == "justdead" then
+			output.Text ..= "\nPlaying You're Not Gone, You're Just Dead! / " .. color("rbxassetid://18566901027", Color3.fromRGB(100, 255, 50))
+			sound.SoundId = "rbxassetid://18566901027"
+			sound:Play()
+		elseif space[2]:lower() == "blueroom" then
+			output.Text ..= "\nPlaying Blue Room (Kz-Version) / " .. color("rbxassetid://18574572375", Color3.fromRGB(100, 255, 50))
+			sound.SoundId = "rbxassetid://18574572375"
+			sound:Play()
 		elseif 1==1 then
 			local id = base .. tonumber(space[2])
 			output.Text ..= "\nPlaying " .. color(id, Color3.fromRGB(100, 255, 50))
@@ -230,11 +238,11 @@ function input (str)
 	elseif space[1]:lower() == "rolloffmin" then
 		output.Text ..= "\n>" .. str
 		sound.RollOffMinDistance = tonumber(space[2])
-		output.Text ..= "\nMin roll off set to " .. space[2]
+		output.Text ..= "\nMinRoll off set to " .. space[2]
 	elseif space[1]:lower() == "rolloffmax" then
 		output.Text ..= "\n>" .. str
 		sound.RollOffMaxDistance = tonumber(space[2])
-		output.Text ..= "\nMax roll off set to " .. space[2]
+		output.Text ..= "\nMaxRoll off set to " .. space[2]
 	elseif space[1]:lower() == "stopmusic" then
 		output.Text ..= "\n>" .. str
 		sound:Pause()
