@@ -1,4 +1,4 @@
--- I miss E7LK 😔
+-- 'E7LK' That I Used To Know Is Lost
 
 -- Services
 local M = game:GetService"MarketplaceService"
