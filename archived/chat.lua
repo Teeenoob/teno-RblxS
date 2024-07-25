@@ -1,4 +1,4 @@
-local char = owner.Character
+local char = owner.Character --it's not really made by me
 local type1 = {
 	'hell',
 	'shut up',
