@@ -209,10 +209,6 @@ function input (str)
 			output.Text ..= "\nPlaying lofi / " .. color("rbxassetid://9043887091", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://9043887091"
 			sound:Play()
-		elseif space[2]:lower() == "wutiwant" then
-			output.Text ..= "\nPlaying wutiwant / " .. color("rbxassetid://18562915383", Color3.fromRGB(100, 255, 50))
-			sound.SoundId = "rbxassetid://18562915383"
-			sound:Play()
 		elseif space[2]:lower() == "justdead" then
 			output.Text ..= "\nPlaying You're Not Gone, You're Just Dead! / " .. color("rbxassetid://18566901027", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://18566901027"
