@@ -253,7 +253,7 @@ function input (str)
 		output.Text ..= "\nMusic stopped"
 	elseif space[1]:lower() == "commands" then
 		output.Text ..= "\n>" .. str
-		output.Text ..= "\nList of commands: / " .. color("commands", Color3.fromRGB(100, 255, 50))
+		output.Text ..= "\nList of commands: " .. color("commands,hide,align,play,setvolume,stopmusic,...", Color3.fromRGB(100, 255, 50))
 	elseif space[1]:lower() == "looped" then
 		if space[2]:lower() == "true" then
 			output.Text ..= "\n>" .. str
