@@ -209,7 +209,7 @@ function input (str)
 			output.Text ..= "\nPlaying lofi / " .. color("rbxassetid://9043887091", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://9043887091"
 			sound:Play()
-		elseif space[2]:lower() == "justdead" then
+		elseif space[2]:lower() == "just_dead" then
 			output.Text ..= "\nPlaying You're Not Gone, You're Just Dead! / " .. color("rbxassetid://18566901027", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://18566901027"
 			sound:Play()
@@ -217,11 +217,11 @@ function input (str)
 			output.Text ..= "\nPlaying FOREVER / " .. color("rbxassetid://113701901846697", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://113701901846697"
 			sound:Play()
-		elseif space[2]:lower() == "biteme" then
+		elseif space[2]:lower() == "bite_me" then
 			output.Text ..= "\nPlaying BITE ME / " .. color("rbxassetid://124555211028059", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://124555211028059"
 			sound:Play()
-		elseif space[2]:lower() == "blueroom" then
+		elseif space[2]:lower() == "blue_room" then
 			output.Text ..= "\nPlaying Blue Room (Kz-Version) / " .. color("rbxassetid://18574572375", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://18574572375"
 			sound:Play()
@@ -242,18 +242,27 @@ function input (str)
 	elseif space[1]:lower() == "rolloffmin" then
 		output.Text ..= "\n>" .. str
 		sound.RollOffMinDistance = tonumber(space[2])
-		output.Text ..= "\nMinRoll off set to " .. space[2]
+		output.Text ..= "\nMin Roll off set to " .. space[2]
 	elseif space[1]:lower() == "rolloffmax" then
 		output.Text ..= "\n>" .. str
 		sound.RollOffMaxDistance = tonumber(space[2])
-		output.Text ..= "\nMaxRoll off set to " .. space[2]
+		output.Text ..= "\nMax Roll off set to " .. space[2]
 	elseif space[1]:lower() == "stopmusic" then
 		output.Text ..= "\n>" .. str
 		sound:Pause()
 		output.Text ..= "\nMusic stopped"
-	elseif space[1]:lower() == "commands" then
+	elseif space[1]:lower() == "help" then
 		output.Text ..= "\n>" .. str
-		output.Text ..= "\nList of commands: " .. color("commands,hide,align,play,setvolume,stopmusic,...", Color3.fromRGB(100, 255, 50))
+		output.Text ..= "\nList of help commands: " .. color("help,help_1,help_2,help_3", Color3.fromRGB(100, 255, 50))
+	elseif space[1]:lower() == "help_1" then
+		output.Text ..= "\n>" .. str
+		output.Text ..= "\nList of Audio commands: " .. color("play,setvolume,pitch,rolloffmin,rolloffmax,stopmusic,looped", Color3.fromRGB(100, 255, 50))
+	elseif space[1]:lower() == "help_2" then
+		output.Text ..= "\n>" .. str
+		output.Text ..= "\nList of Console commands: " .. color("clear,hide,align,textcolor,backgroundcolor,transparency", Color3.fromRGB(100, 255, 50))
+	elseif space[1]:lower() == "help_3" then
+		output.Text ..= "\n>" .. str
+		output.Text ..= "\nList of Player Related commands: " .. color("ws,dmg,des,ldes,kill,re,display,goto,bring,da,st,snap,lsnap,heal,sethealth", Color3.fromRGB(100, 255, 50))
 	elseif space[1]:lower() == "looped" then
 		if space[2]:lower() == "true" then
 			output.Text ..= "\n>" .. str
@@ -344,7 +353,7 @@ function input (str)
 		local plr = getPlr(space[2])
 		plr:LoadCharacter()
 		output.Text ..= "\nReloaded " .. plr.Name
-	elseif space[1]:lower() == "dis" then
+	elseif space[1]:lower() == "display" then
 		output.Text ..= "\n>" .. str
 		local char = getChar(space[2])
 		if char.Humanoid then
