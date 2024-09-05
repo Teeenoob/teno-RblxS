@@ -1,5 +1,5 @@
--- 'E7LK' That I Used To Know Is Lost
-
+-- ~ Teeenoob ~ | I'm Murder Drones Fan
+-- ~ i try to add stuff in free time
 -- Services
 local M = game:GetService"MarketplaceService"
 local P = game:GetService"Players"
@@ -19,7 +19,7 @@ local textColor = Color3.fromRGB(255, 255, 255)
 local backgroundColor = Color3.fromRGB(0, 0, 0)
 local inputTransparency, outputTransparency = 0, 1
 local canvasSize = Vector2.new(1400, 600)
-local openingText = [[Console loaded 💥]]
+local openingText = [[|NULL|]]
 
 -- Casual Variables
 local player = owner;
@@ -213,6 +213,14 @@ function input (str)
 			output.Text ..= "\nPlaying You're Not Gone, You're Just Dead! / " .. color("rbxassetid://18566901027", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://18566901027"
 			sound:Play()
+		elseif space[2]:lower() == "forever" then
+			output.Text ..= "\nPlaying FOREVER / " .. color("rbxassetid://113701901846697", Color3.fromRGB(100, 255, 50))
+			sound.SoundId = "rbxassetid://113701901846697"
+			sound:Play()
+		elseif space[2]:lower() == "biteme" then
+			output.Text ..= "\nPlaying BITE ME / " .. color("rbxassetid://124555211028059", Color3.fromRGB(100, 255, 50))
+			sound.SoundId = "rbxassetid://124555211028059"
+			sound:Play()
 		elseif space[2]:lower() == "blueroom" then
 			output.Text ..= "\nPlaying Blue Room (Kz-Version) / " .. color("rbxassetid://18574572375", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://18574572375"
@@ -243,6 +251,9 @@ function input (str)
 		output.Text ..= "\n>" .. str
 		sound:Pause()
 		output.Text ..= "\nMusic stopped"
+	elseif space[1]:lower() == "commands" then
+		output.Text ..= "\n>" .. str
+		output.Text ..= "\nList of commands: / " .. color("commands", Color3.fromRGB(100, 255, 50))
 	elseif space[1]:lower() == "looped" then
 		if space[2]:lower() == "true" then
 			output.Text ..= "\n>" .. str
@@ -260,6 +271,9 @@ function input (str)
 		elseif space[2]:lower() == "right" then
 			output.Text ..= "\n>" .. str
 			output.TextXAlignment, textBox.TextXAlignment = Enum.TextXAlignment.Right, Enum.TextXAlignment.Right
+		elseif space[2]:lower() == "center" then
+			output.Text ..= "\n>" .. str
+			output.TextXAlignment, textBox.TextXAlignment = Enum.TextXAlignment.Center, Enum.TextXAlignment.Center
 		end
 	elseif space[1]:lower() == "textcolor" then
 		output.Text ..= "\n>" .. str
