@@ -19,7 +19,7 @@ local textColor = Color3.fromRGB(255, 255, 255)
 local backgroundColor = Color3.fromRGB(0, 0, 0)
 local inputTransparency, outputTransparency = 0, 1
 local canvasSize = Vector2.new(1400, 600)
-local openingText = [[|NULL|]]
+local openingText = "[NULL]"
 
 -- Casual Variables
 local player = owner;
