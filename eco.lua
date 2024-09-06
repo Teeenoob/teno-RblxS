@@ -1,4 +1,4 @@
--- ~ Teeenoob ~ | I'm Murder Drones Fan
+-- ~ Teeenoob's Version ~
 -- ~ i try to add stuff in free time
 -- Services
 local M = game:GetService"MarketplaceService"
