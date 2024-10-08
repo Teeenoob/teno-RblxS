@@ -1,5 +1,4 @@
--- ~ Teeenoob's Version ~
--- ~ i try to add stuff in free time
+-- Teeenoob's Version
 -- Services
 local M = game:GetService"MarketplaceService"
 local P = game:GetService"Players"
@@ -19,7 +18,7 @@ local textColor = Color3.fromRGB(255, 255, 255)
 local backgroundColor = Color3.fromRGB(0, 0, 0)
 local inputTransparency, outputTransparency = 0, 1
 local canvasSize = Vector2.new(1400, 600)
-local openingText = "[NULL]"
+local openingText = "SYS//:"
 
 -- Casual Variables
 local player = owner;
@@ -30,9 +29,17 @@ local rootpart = character.HumanoidRootPart;
 local base = "rbxassetid://"
 local rand = math.random
 local dApi = "https://api.dictionaryapi.dev/api/v2/entries/en/"
-local cApi = ""
 
 -- Functions
+local function Help()
+	warn(">{	Keybinds")
+	print(">{		 Q:Open UI")
+	print(">{		 Left Shift + Enter:Run Commands")
+	warn(">{	Console Input")
+	print(">{		 %print('Hello') [raw code]")
+	print(">{		 ~Hello [comment]")
+end
+
 function getPlr (text)
 	for _, player in pairs(P:GetPlayers()) do
 		if player.Name:lower():sub(1, #text) == text:lower() or player.Character.Humanoid.DisplayName:lower():sub(1, #text) == text:lower() then
@@ -140,8 +147,8 @@ end)
 local sound = Instance.new("Sound", screen)
 sound.Volume = 1
 sound.Looped = true
-sound.RollOffMinDistance = 14
-sound.RollOffMaxDistance = 32
+sound.RollOffMinDistance = 16
+sound.RollOffMaxDistance = 38
 sound.RollOffMode = Enum.RollOffMode.Linear
 
 local surfaceGui = Instance.new("SurfaceGui", screen)
@@ -201,6 +208,10 @@ function input (str)
 		output.Text ..= "\n" .. num
 	elseif str:lower():sub(1, 5) == "clear" then
 		output.Text = openingText
+	elseif space[1]:lower() == "toptext" then
+		output.Text ..= "\n>" .. str
+		openingText = str:sub(8, #str)
+		output.Text = openingText
 	elseif str:lower() == "hide" then
 		surfaceGui.Enabled = false
 	elseif space[1]:lower() == "play" then
@@ -209,23 +220,15 @@ function input (str)
 			output.Text ..= "\nPlaying lofi / " .. color("rbxassetid://9043887091", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://9043887091"
 			sound:Play()
-		elseif space[2]:lower() == "just_dead" then
-			output.Text ..= "\nPlaying You're Not Gone, You're Just Dead! / " .. color("rbxassetid://18566901027", Color3.fromRGB(100, 255, 50))
-			sound.SoundId = "rbxassetid://18566901027"
-			sound:Play()
 		elseif space[2]:lower() == "forever" then
 			output.Text ..= "\nPlaying FOREVER / " .. color("rbxassetid://113701901846697", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://113701901846697"
 			sound:Play()
-		elseif space[2]:lower() == "bite_me" then
+		elseif space[2]:lower() == "biteme" then
 			output.Text ..= "\nPlaying BITE ME / " .. color("rbxassetid://124555211028059", Color3.fromRGB(100, 255, 50))
 			sound.SoundId = "rbxassetid://124555211028059"
 			sound:Play()
-		elseif space[2]:lower() == "blue_room" then
-			output.Text ..= "\nPlaying Blue Room (Kz-Version) / " .. color("rbxassetid://18574572375", Color3.fromRGB(100, 255, 50))
-			sound.SoundId = "rbxassetid://18574572375"
-			sound:Play()
-		elseif 1==1 then
+		elseif 1==1 then --a bit lazy move
 			local id = base .. tonumber(space[2])
 			output.Text ..= "\nPlaying " .. color(id, Color3.fromRGB(100, 255, 50))
 			sound.SoundId = id
@@ -251,18 +254,6 @@ function input (str)
 		output.Text ..= "\n>" .. str
 		sound:Pause()
 		output.Text ..= "\nMusic stopped"
-	elseif space[1]:lower() == "help" then
-		output.Text ..= "\n>" .. str
-		output.Text ..= "\nList of help commands: " .. color("help,help_1,help_2,help_3", Color3.fromRGB(100, 255, 50))
-	elseif space[1]:lower() == "help_1" then
-		output.Text ..= "\n>" .. str
-		output.Text ..= "\nList of Audio commands: " .. color("play,setvolume,pitch,rolloffmin,rolloffmax,stopmusic,looped", Color3.fromRGB(100, 255, 50))
-	elseif space[1]:lower() == "help_2" then
-		output.Text ..= "\n>" .. str
-		output.Text ..= "\nList of Console commands: " .. color("clear,hide,align,textcolor,backgroundcolor,transparency", Color3.fromRGB(100, 255, 50))
-	elseif space[1]:lower() == "help_3" then
-		output.Text ..= "\n>" .. str
-		output.Text ..= "\nList of Player Related commands: " .. color("ws,dmg,des,ldes,kill,re,display,goto,bring,da,st,snap,lsnap,heal,sethealth", Color3.fromRGB(100, 255, 50))
 	elseif space[1]:lower() == "looped" then
 		if space[2]:lower() == "true" then
 			output.Text ..= "\n>" .. str
@@ -275,13 +266,10 @@ function input (str)
 		end
 	elseif space[1]:lower() == "align" then
 		if space[2]:lower() == "left" then
-			output.Text ..= "\n>" .. str
 			output.TextXAlignment, textBox.TextXAlignment = Enum.TextXAlignment.Left, Enum.TextXAlignment.Left
 		elseif space[2]:lower() == "right" then
-			output.Text ..= "\n>" .. str
 			output.TextXAlignment, textBox.TextXAlignment = Enum.TextXAlignment.Right, Enum.TextXAlignment.Right
 		elseif space[2]:lower() == "center" then
-			output.Text ..= "\n>" .. str
 			output.TextXAlignment, textBox.TextXAlignment = Enum.TextXAlignment.Center, Enum.TextXAlignment.Center
 		end
 	elseif space[1]:lower() == "textcolor" then
@@ -578,3 +566,4 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function()
 end)
 
 ]], character)
+Help()
