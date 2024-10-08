@@ -208,7 +208,7 @@ function input (str)
 		output.Text ..= "\n" .. num
 	elseif str:lower():sub(1, 5) == "clear" then
 		output.Text = openingText
-	elseif space[1]:lower() == "toptext" then
+	elseif space[1]:lower() == "clearcustom" then
 		output.Text ..= "\n>" .. str
 		openingText = str:sub(8, #str)
 		output.Text = openingText
