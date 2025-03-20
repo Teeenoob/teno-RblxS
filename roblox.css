@@ -1,0 +1,84 @@
+/*may lag a bit on lowend pc*/
+.content .friends-carousel-tile {
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	cursor: pointer;
+}
+.friend-tile-dropdown {
+    background: rgba(0, 0, 0, .4) !important;
+    backdrop-filter: blur(3.5px);
+}
+.friend-tile-dropdown:not(:hover) {
+    background: rgb(0, 0, 0, .4) !important;
+    animation: qblur2 .5s linear;
+}
+.items-list.avatar-item-list .item-card.six-column,
+.recommended-items-slider .recommended-items li {
+	width: auto;
+}
+#content,#container-main {
+    padding: 0px 0px 0px 0px;
+    margin: 14px 0px 0px 0px;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+#chat-container [id^="dialog-container-"],#header,
+#chat-container [id^="dialog-container-"] [id^="scrollbar_"],
+#chat-container #chat-main,#chat-container #chat-header,
+#chat-container [id^="dialog-container-"] .dialog-header {
+    background: rgba(39,41,48,.4) !important;
+    backdrop-filter: blur(6px);
+}
+#navigation  {
+    background: rgba(9,11,18,.4) !important;
+    opacity: 1%;
+    width: 10px;
+    transition: width 0.4s ease;
+}
+#navigation:hover {
+    backdrop-filter: blur(5px);
+    opacity: 100%;
+    width: 175px;
+}
+#navigation span {
+  white-space: nowrap;
+}
+/*green buttons*/
+.dark-theme .btn-common-play-game-lg {
+    border-radius: 8px;
+    background-color: #14b659;
+    border-color: transparent;
+    color: #f7f7f8;
+}
+.dark-theme .btn-common-play-game-lg:focus, .dark-theme .btn-common-play-game-lg:hover {
+    background-color: #14b659;
+    border-color: transparent;
+    color: #f7f7f8;
+}
+.dark-theme .btn-growth-sm  {
+    border-radius: 8px;
+    background-color: #14b659;
+    border-color: transparent;
+    color: #f7f7f8;
+}
+.dark-theme .btn-growth-sm :focus, .dark-theme .btn-growth-sm:hover {
+    background-color: #14b659;
+    border-color: transparent;
+    color: #f7f7f8;
+}
+/*not so important*/
+@keyframes qblur2 {
+    0% {
+        backdrop-filter: blur(0px);
+    }
+    50% {
+        backdrop-filter: blur(3.5px);
+    }
+    100% {
+        backdrop-filter: blur(3.5px);
+    }
+}
+.dark-theme .chat-friend-list .chat-friend-container .chat-friend-info.read, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info .read, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info.read.text, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info.read .text, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info .read.text, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info .read .text, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info.read.text-label, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info.read .text-label, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info .read.text-label, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info .read .text-label, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info.read.text-link, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info.read .text-link, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info .read.text-link, .dark-theme .chat-friend-list .chat-friend-container .chat-friend-info .read .text-link {
+	color: #ddd; /*#bcbec8;*/
+}
